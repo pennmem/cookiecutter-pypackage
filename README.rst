@@ -14,51 +14,41 @@ Features
 * Travis-CI_: Ready for Travis Continuous Integration testing
 * Sphinx_ docs: Documentation ready for generation and publishing to Github Pages
 
-Quickstart
+How to use
 ----------
 
-Install the latest Cookiecutter if you haven't installed it yet (this requires
-Cookiecutter 1.4.0 or higher)::
+Install Cookiecutter using pip::
 
     pip install -U cookiecutter
 
-Generate a Python package project::
+or with conda::
+
+    conda install -c conda-forge cookiecutter
+
+Create a new project::
 
     cookiecutter https://github.com/pennmem/cookiecutter-pypackage.git
 
-The following is from the original README and should be updated for CML-specific
-instructions.
+Change to the directory created and create a new git repository::
 
-Then:
+    git init
 
-* Create a repo and put it there.
-* Add the repo to your Travis-CI_ account.
-* Install the dev requirements into a virtualenv. (``pip install -r requirements_dev.txt``)
-* Run the script `travis_pypi_setup.py` to encrypt your PyPI password in Travis config
-  and activate automated deployment on PyPI when you push a new tag to master branch.
-* Add the repo to your ReadTheDocs_ account + turn on the ReadTheDocs service hook.
-* Release your package by pushing a new tag to master.
-* Add a `requirements.txt` file that specifies the packages you will need for
-  your project and their versions. For more info see the `pip docs for requirements files`_.
-* Activate your project on `pyup.io`_.
+Generating documentation
+------------------------
 
-.. _`pip docs for requirements files`: https://pip.pypa.io/en/stable/user_guide/#requirements-files
+To get project documentation to automatically show up at
+``https://pennmem.github.io/<reponame>``, it is necessary to first enable this
+feature. On GitHub, go to the project page and click on the settings tab. Scroll
+down to the "GitHub Pages" section and for "Source" select "master branch /docs
+folder".
 
-For more details, see the `cookiecutter-pypackage tutorial`_.
+Build documentation with the following command::
 
-.. _`cookiecutter-pypackage tutorial`: https://cookiecutter-pypackage.readthedocs.io/en/latest/tutorial.html
+    maint/build_docs.py
 
-.. _Travis-CI: http://travis-ci.org/
-.. _Tox: http://testrun.org/tox/
-.. _Sphinx: http://sphinx-doc.org/
-.. _ReadTheDocs: https://readthedocs.io/
-.. _`pyup.io`: https://pyup.io/
-.. _Bumpversion: https://github.com/peritus/bumpversion
-.. _PyPi: https://pypi.python.org/pypi
+.. warning::
 
-.. _`Nekroze/cookiecutter-pypackage`: https://github.com/Nekroze/cookiecutter-pypackage
-.. _`tony/cookiecutter-pypackage-pythonic`: https://github.com/tony/cookiecutter-pypackage-pythonic
-.. _`ardydedase/cookiecutter-pypackage`: https://github.com/ardydedase/cookiecutter-pypackage
-.. _github comparison view: https://github.com/tony/cookiecutter-pypackage-pythonic/compare/audreyr:master...master
-.. _`network`: https://github.com/audreyr/cookiecutter-pypackage/network
-.. _`family tree`: https://github.com/audreyr/cookiecutter-pypackage/network/members
+   Do **not** use ``make clean`` from the ``docs`` directory since this will
+   erase everything in ``docs``!
+
+Add the generated HTML pages to git and push to GitHub.
