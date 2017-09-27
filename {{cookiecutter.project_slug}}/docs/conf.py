@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# {{cookiecutter.project_slug}} documentation build configuration file, created by
+# {{cookiecutter.project_name}} documentation build configuration file, created by
 # sphinx-quickstart on Mon Sep 11 11:41:00 2017.
 #
 # This file is execfile()d with the current directory set to its
@@ -53,8 +53,8 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = '{{cookiecutter.project_slug}}'
-copyright = '2017, Penn Computational Memory Lab'
+project = '{{cookiecutter.project_name}}'
+copyright = '2017'
 author = 'Penn Computational Memory Lab'
 
 # The version info for the project you're documenting, acts as replacement for
