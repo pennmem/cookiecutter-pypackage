@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from setuptools import setup, find_packages
+from {{ cookiecutter.project_slug }} import __version__
 
 with open('README.rst') as readme_file:
     readme = readme_file.read()
@@ -17,7 +18,7 @@ setup_requirements = []
 
 setup(
     name='{{ cookiecutter.project_slug }}',
-    version='{{ cookiecutter.version }}',
+    version=__version__,
     description="{{ cookiecutter.project_short_description }}",
     long_description=readme + '\n\n' + history,
     author="{{ cookiecutter.full_name.replace('\"', '\\\"') }}",
