@@ -12,7 +12,11 @@ Features
 
 * Testing setup with ``pytest``
 * Travis-CI_: Ready for Travis Continuous Integration testing
-* Sphinx_ docs: Documentation ready for generation and publishing to Github Pages
+* Sphinx_ docs: Documentation ready for generation and publishing to Github
+  Pages
+
+.. _Travis-CI: https://travis-ci.org/
+.. _Sphinx: http://www.sphinx-doc.org/en/stable/
 
 How to use
 ----------
@@ -52,3 +56,16 @@ Build documentation with the following command::
    erase everything in ``docs``!
 
 Add the generated HTML pages to git and push to GitHub.
+
+Building conda packages
+-----------------------
+
+A minimal conda recipe is included in the ``conda.recipe`` directory. It should
+be kicked off by running::
+
+  python maint/build.py
+
+This will result in packges in the ``build`` directory. Note that this might
+require some modification if building packages that require compiling C
+extensions. Also note that running the above script will remove an existing
+``build`` directory before running.
