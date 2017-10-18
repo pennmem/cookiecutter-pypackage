@@ -11,18 +11,17 @@ build:
   number: 0
 
   # Specify additional env vars pass through
-  script_env:
-    # Used to specify which Python version to build against
-    - PYTHON_BUILD_VERSION
+  # script_env:
+  #   - ENV_VAR_HERE
 
 requirements:
   build:
     # We default to Python 3.6 if no environment variable is set
-    - python {{ environ.get("PYTHON_BUILD_VERSION", "3.6") }}*
+    - python {{'{{ python }}'}}
     - setuptools
 
   run:
-    - python {{PY_VER}}*
+    - python {{'{{ python }}'}}
     # - vs2015_runtime  [win]
 
 test:
