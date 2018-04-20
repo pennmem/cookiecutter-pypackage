@@ -48,7 +48,7 @@ folder".
 
 Build documentation with the following command::
 
-    maint/build_docs.py
+    python maint/build_docs.py
 
 .. warning::
 
