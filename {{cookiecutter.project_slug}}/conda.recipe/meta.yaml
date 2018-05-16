@@ -1,3 +1,4 @@
+{% raw %}
 {% set setup_data = load_setup_py_data() %}
 
 package:
@@ -42,3 +43,5 @@ about:
   summary: {{ setup_data['description'] }}
   # license: FIXME
   # license_file: FIXME
+
+{% endraw %}
